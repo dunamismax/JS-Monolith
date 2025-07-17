@@ -331,5 +331,5 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ---
 
 <p align="center">
-  <img src="/images/js-yellow-blank.jpeg" alt="JavaScript Yellow" width="400" />
+  <img src="/images/js-yellow-crown.jpeg" alt="JavaScript Yellow" width="300" />
 </p>
