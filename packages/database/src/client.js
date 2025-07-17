@@ -1,10 +1,10 @@
-import { MongoClient } from 'mongodb';
+import { MongoClient } from "mongodb";
 
 let client = null;
 let db = null;
 
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017';
-const DB_NAME = process.env.DB_NAME || 'js-monolith';
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017";
+const DB_NAME = process.env.DB_NAME || "js-monolith";
 
 export const getClient = async () => {
   if (!client) {
@@ -30,5 +30,5 @@ export const closeConnection = async () => {
   }
 };
 
-process.on('SIGINT', closeConnection);
-process.on('SIGTERM', closeConnection);
+process.on("SIGINT", closeConnection);
+process.on("SIGTERM", closeConnection);

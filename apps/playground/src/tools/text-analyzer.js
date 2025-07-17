@@ -1,4 +1,4 @@
-import { debounce } from '@js-monolith/lib';
+import { debounce } from "@js-monolith/lib";
 
 export class TextAnalyzer {
   constructor(apiClient) {
@@ -21,17 +21,17 @@ export class TextAnalyzer {
       </div>
     `;
 
-    const textInput = container.querySelector('#text-input');
-    const analyzeBtn = container.querySelector('#analyze-btn');
-    const resultContainer = container.querySelector('#text-result');
+    const textInput = container.querySelector("#text-input");
+    const analyzeBtn = container.querySelector("#analyze-btn");
+    const resultContainer = container.querySelector("#text-result");
 
-    textInput.addEventListener('input', () => {
+    textInput.addEventListener("input", () => {
       if (textInput.value.trim()) {
         this.debouncedAnalyze(textInput.value, resultContainer);
       }
     });
 
-    analyzeBtn.addEventListener('click', () => {
+    analyzeBtn.addEventListener("click", () => {
       if (textInput.value.trim()) {
         this.analyze(textInput.value, resultContainer);
       }
@@ -39,14 +39,16 @@ export class TextAnalyzer {
   }
 
   async analyze(text, resultContainer) {
-    resultContainer.className = 'result-container loading';
-    resultContainer.innerHTML = '<loading-spinner></loading-spinner>';
+    resultContainer.className = "result-container loading";
+    resultContainer.innerHTML = "<loading-spinner></loading-spinner>";
 
     try {
-      const response = await this.apiClient.post('/tools/analyze-text', { text });
+      const response = await this.apiClient.post("/tools/analyze-text", {
+        text,
+      });
       const { analysis } = response;
 
-      resultContainer.className = 'result-container success';
+      resultContainer.className = "result-container success";
       resultContainer.innerHTML = `
         <div class="result-content">
           <div class="result-stats">
@@ -78,7 +80,7 @@ export class TextAnalyzer {
         </div>
       `;
     } catch (error) {
-      resultContainer.className = 'result-container error';
+      resultContainer.className = "result-container error";
       resultContainer.innerHTML = `
         <div class="result-content">
           <strong>Error:</strong> ${error.message}

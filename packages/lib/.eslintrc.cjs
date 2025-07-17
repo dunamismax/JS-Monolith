@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['@js-monolith/eslint-config']
+  extends: ["@js-monolith/eslint-config"],
 };

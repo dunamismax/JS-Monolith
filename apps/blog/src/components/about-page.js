@@ -14,7 +14,7 @@ export class AboutPage {
           are both lightning-fast and future-proof.
         </p>
         <p>
-          This blog serves as a showcase for the JS-Monolith architecture and a platform to 
+          This blog serves as a showcase for the js-monolith architecture and a platform to 
           share insights about web development, performance optimization, and modern JavaScript techniques.
         </p>
         
@@ -52,8 +52,8 @@ export class AboutPage {
           want to discuss web development and performance optimization.
         </p>
         <p>
-          You can find the source code for this blog and the entire JS-Monolith architecture 
-          on <a href="https://github.com/dunamismax/JS-Monolith" target="_blank">GitHub</a>.
+          You can find the source code for this blog and the entire js-monolith architecture 
+          on <a href="https://github.com/dunamismax/js-monolith" target="_blank">GitHub</a>.
         </p>
       </div>
     `;

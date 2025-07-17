@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="/images/js-evolution.jpeg" alt="JS-Monolith Logo" width="400" />
+  <img src="/images/js-evolution.jpeg" alt="js-monolith Logo" width="400" />
 </p>
 
 <p align="center">
-  <a href="https://github.com/dunamismax/JS-Monolith">
+  <a href="https://github.com/dunamismax/js-monolith">
     <img src="https://readme-typing-svg.demolab.com/?font=Fira+Code&size=24&pause=1000&color=F7DF1E&center=true&vCenter=true&width=800&lines=The+Ultimate+Pure+JavaScript+Monorepo;Vanilla+JS+%2B+Web+Components+%2B+Fastify;Lightning-Fast+esbuild+%2B+MongoDB;Pico.css+%2B+Turborepo;Zero+Framework+Overhead" alt="Typing SVG" />
   </a>
 </p>
@@ -59,8 +59,8 @@ This monorepo showcases The Ultimate Pure JavaScript Monorepo - architected for 
 1. Clone and initialize:
 
    ```bash
-   git clone https://github.com/dunamismax/JS-Monolith.git
-   cd JS-Monolith
+   git clone https://github.com/dunamismax/js-monolith.git
+   cd js-monolith
    pnpm install
    ```
 
