@@ -324,12 +324,10 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 ---
 
 <p align="center">
-  <strong>The Ultimate Pure JavaScript Monorepo</strong><br>
-  <sub>Vanilla JS + Web Components + Fastify + MongoDB + esbuild + Turborepo</sub>
+  <img src="/images/js-yellow-crown.jpg" alt="JavaScript Yellow" width="400" />
 </p>
 
----
-
 <p align="center">
-  <img src="/images/js-yellow-crown.jpg" alt="JavaScript Yellow" width="400" />
+  <strong>The Ultimate Pure JavaScript Monorepo</strong><br>
+  <sub>Vanilla JS + Web Components + Fastify + MongoDB + esbuild + Turborepo</sub>
 </p>
