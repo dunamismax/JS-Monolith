@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="js-monolith.png" alt="JS-Monolith Logo" width="600" />
+  <img src="/images/js-evolution.jpeg" alt="JS-Monolith Logo" width="600" />
 </p>
 
 <p align="center">
