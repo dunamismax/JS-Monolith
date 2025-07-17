@@ -1,0 +1,19 @@
+{
+  "name": "@js-monolith/database",
+  "version": "1.0.0",
+  "description": "MongoDB native driver client and database logic",
+  "author": "dunamismax <dunamismax@tutamail.com>",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint src/",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "mongodb": "^6.3.0"
+  },
+  "devDependencies": {
+    "@js-monolith/eslint-config": "workspace:*",
+    "eslint": "^8.57.0"
+  }
+}

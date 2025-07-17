@@ -1,0 +1,25 @@
+{
+  "name": "js-monolith",
+  "version": "1.0.0",
+  "description": "High-performance pure JavaScript monorepo",
+  "author": "dunamismax <dunamismax@tutamail.com>",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean"
+  },
+  "devDependencies": {
+    "turbo": "^2.0.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "esbuild": "^0.20.0"
+  },
+  "packageManager": "pnpm@9.0.0"
+}

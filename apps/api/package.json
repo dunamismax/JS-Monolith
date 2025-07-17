@@ -1,0 +1,25 @@
+{
+  "name": "@js-monolith/api",
+  "version": "1.0.0",
+  "description": "Fastify backend API",
+  "author": "dunamismax <dunamismax@tutamail.com>",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "build": "echo 'No build needed for Node.js' && exit 0",
+    "lint": "eslint src/",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "fastify": "^4.25.2",
+    "@fastify/cors": "^8.4.2",
+    "@js-monolith/database": "workspace:*",
+    "@js-monolith/lib": "workspace:*"
+  },
+  "devDependencies": {
+    "@js-monolith/eslint-config": "workspace:*",
+    "eslint": "^8.57.0"
+  }
+}

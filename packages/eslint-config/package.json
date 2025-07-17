@@ -1,0 +1,10 @@
+{
+  "name": "@js-monolith/eslint-config",
+  "version": "1.0.0",
+  "description": "Shared ESLint configuration for JS-Monolith",
+  "author": "dunamismax <dunamismax@tutamail.com>",
+  "main": "index.js",
+  "dependencies": {
+    "eslint": "^8.57.0"
+  }
+}

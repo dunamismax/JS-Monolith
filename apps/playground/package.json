@@ -1,0 +1,23 @@
+{
+  "name": "@js-monolith/playground",
+  "version": "1.0.0",
+  "description": "api-playground - Interactive API testing playground built with Vanilla JS",
+  "author": "dunamismax <dunamismax@tutamail.com>",
+  "type": "module",
+  "scripts": {
+    "dev": "esbuild src/main.js --bundle --outfile=public/js/bundle.js --watch --servedir=public --port=3002",
+    "build": "esbuild src/main.js --bundle --outfile=public/js/bundle.js --minify",
+    "preview": "esbuild src/main.js --bundle --outfile=public/js/bundle.js --minify --servedir=public --port=3002",
+    "lint": "eslint src/",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "dependencies": {
+    "@js-monolith/lib": "workspace:*",
+    "@js-monolith/ui-components": "workspace:*"
+  },
+  "devDependencies": {
+    "@js-monolith/eslint-config": "workspace:*",
+    "esbuild": "^0.20.0",
+    "eslint": "^8.57.0"
+  }
+}
