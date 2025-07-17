@@ -9,9 +9,21 @@
     "build": "esbuild src/main.js --bundle --outfile=public/js/bundle.js --minify",
     "preview": "esbuild src/main.js --bundle --outfile=public/js/bundle.js --minify --servedir=public --port=3002",
     "lint": "eslint src/",
-    "test": "echo \"No tests specified\" && exit 0"
+    "test": "echo \"No tests specified\" && exit 0",
+    "cap:add": "cap add",
+    "cap:copy": "cap copy",
+    "cap:sync": "cap sync",
+    "cap:open": "cap open",
+    "mobile:build": "npm run build && cap sync",
+    "mobile:dev": "npm run build && cap copy",
+    "ios:dev": "npm run mobile:dev && cap open ios",
+    "android:dev": "npm run mobile:dev && cap open android"
   },
   "dependencies": {
+    "@capacitor/android": "^7.4.2",
+    "@capacitor/cli": "^7.4.2",
+    "@capacitor/core": "^7.4.2",
+    "@capacitor/ios": "^7.4.2",
     "@js-monolith/lib": "workspace:*",
     "@js-monolith/ui-components": "workspace:*"
   },

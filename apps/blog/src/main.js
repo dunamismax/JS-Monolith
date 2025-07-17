@@ -3,7 +3,7 @@ import { createApiClient } from '@js-monolith/lib';
 import { Router } from './router.js';
 import { BlogApp } from './blog-app.js';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = globalThis.BLOG_API_URL || window.BLOG_API_URL || 'http://localhost:3001/api';
 
 const apiClient = createApiClient(API_BASE_URL);
 const router = new Router();

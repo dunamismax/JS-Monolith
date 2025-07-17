@@ -1,4 +1,4 @@
-import { debounce } from "@js-monolith/lib";
+import { debounce, createStatsGrid, showToolResult, showToolError } from "@js-monolith/lib";
 
 export class TextAnalyzer {
   constructor(apiClient) {
@@ -48,44 +48,19 @@ export class TextAnalyzer {
       });
       const { analysis } = response;
 
-      resultContainer.className = "result-container success";
-      resultContainer.innerHTML = `
-        <div class="result-content">
-          <div class="result-stats">
-            <div class="stat-item">
-              <div class="stat-value">${analysis.words}</div>
-              <div class="stat-label">Words</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">${analysis.characters}</div>
-              <div class="stat-label">Characters</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">${analysis.charactersNoSpaces}</div>
-              <div class="stat-label">No Spaces</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">${analysis.sentences}</div>
-              <div class="stat-label">Sentences</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">${analysis.paragraphs}</div>
-              <div class="stat-label">Paragraphs</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-value">${analysis.readingTime}</div>
-              <div class="stat-label">Reading Time</div>
-            </div>
-          </div>
-        </div>
-      `;
+      const stats = {
+        'Words': analysis.words,
+        'Characters': analysis.characters,
+        'No Spaces': analysis.charactersNoSpaces,
+        'Sentences': analysis.sentences,
+        'Paragraphs': analysis.paragraphs,
+        'Reading Time': analysis.readingTime
+      };
+
+      const statsGrid = createStatsGrid(stats);
+      showToolResult(resultContainer, statsGrid);
     } catch (error) {
-      resultContainer.className = "result-container error";
-      resultContainer.innerHTML = `
-        <div class="result-content">
-          <strong>Error:</strong> ${error.message}
-        </div>
-      `;
+      showToolError(resultContainer, error.message);
     }
   }
 }

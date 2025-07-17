@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Playground App</string>
+    <string name="title_activity_main">Playground App</string>
+    <string name="package_name">com.dunamismax.playground</string>
+    <string name="custom_url_scheme">com.dunamismax.playground</string>
+</resources>

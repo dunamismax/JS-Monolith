@@ -11,6 +11,11 @@ export async function toolsRoutes(fastify, _options) {
         return;
       }
       
+      if (text.length > 1000000) { // 1MB limit
+        reply.code(400).send({ error: 'Text too large (max 1MB)' });
+        return;
+      }
+      
       const words = text.trim().split(/\s+/).filter(word => word.length > 0);
       const characters = text.length;
       const charactersNoSpaces = text.replace(/\s/g, '').length;
@@ -38,6 +43,11 @@ export async function toolsRoutes(fastify, _options) {
       const { min = 1, max = 100 } = request.query;
       const minNum = parseInt(min);
       const maxNum = parseInt(max);
+      
+      if (isNaN(minNum) || isNaN(maxNum) || minNum < -1000000 || maxNum > 1000000) {
+        reply.code(400).send({ error: 'Invalid number range' });
+        return;
+      }
       
       if (minNum >= maxNum) {
         reply.code(400).send({ error: 'Min must be less than max' });
@@ -101,8 +111,9 @@ export async function toolsRoutes(fastify, _options) {
       if (includeSymbols) charset += '!@#$%^&*()_+-=[]{}|;:,.<>?';
       
       let password = '';
+      const randomBytes = crypto.randomBytes(length * 2);
       for (let i = 0; i < length; i++) {
-        password += charset.charAt(Math.floor(Math.random() * charset.length));
+        password += charset.charAt(randomBytes[i] % charset.length);
       }
       
       return {

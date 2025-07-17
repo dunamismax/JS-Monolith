@@ -1,6 +1,7 @@
 import { PostList } from './components/post-list.js';
 import { PostDetail } from './components/post-detail.js';
 import { AboutPage } from './components/about-page.js';
+import { escapeHTML, createSafeElement } from '@js-monolith/lib';
 
 export class BlogApp {
   constructor(apiClient, router) {
@@ -66,9 +67,12 @@ export class BlogApp {
     try {
       const post = await this.postDetail.loadPost(postId);
       this.appContainer.innerHTML = `
-        <button class="back-button" onclick="history.back()">← Back to posts</button>
         <div id="post-container"></div>
       `;
+      
+      const backButton = createSafeElement('button', '← Back to posts', { class: 'back-button' });
+      backButton.addEventListener('click', () => history.back());
+      this.appContainer.insertBefore(backButton, this.appContainer.firstChild);
       
       const postContainer = document.getElementById('post-container');
       this.postDetail.render(postContainer, post);
@@ -83,22 +87,38 @@ export class BlogApp {
   }
 
   showNotFound() {
-    this.appContainer.innerHTML = `
-      <div class="error-message">
-        <h2>404 - Page Not Found</h2>
-        <p>The page you're looking for doesn't exist.</p>
-        <button onclick="window.location.hash = '/'">Go Home</button>
-      </div>
-    `;
+    this.appContainer.innerHTML = '';
+    
+    const errorDiv = createSafeElement('div', '', { class: 'error-message' });
+    const heading = createSafeElement('h2', '404 - Page Not Found');
+    const paragraph = createSafeElement('p', 'The page you\'re looking for doesn\'t exist.');
+    const button = createSafeElement('button', 'Go Home');
+    
+    button.addEventListener('click', () => {
+      window.location.hash = '/';
+    });
+    
+    errorDiv.appendChild(heading);
+    errorDiv.appendChild(paragraph);
+    errorDiv.appendChild(button);
+    this.appContainer.appendChild(errorDiv);
   }
 
   showError(message) {
-    this.appContainer.innerHTML = `
-      <div class="error-message">
-        <h2>Error</h2>
-        <p>${message}</p>
-        <button onclick="window.location.reload()">Retry</button>
-      </div>
-    `;
+    this.appContainer.innerHTML = '';
+    
+    const errorDiv = createSafeElement('div', '', { class: 'error-message' });
+    const heading = createSafeElement('h2', 'Error');
+    const paragraph = createSafeElement('p', escapeHTML(message));
+    const button = createSafeElement('button', 'Retry');
+    
+    button.addEventListener('click', () => {
+      window.location.reload();
+    });
+    
+    errorDiv.appendChild(heading);
+    errorDiv.appendChild(paragraph);
+    errorDiv.appendChild(button);
+    this.appContainer.appendChild(errorDiv);
   }
 }
